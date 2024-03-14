@@ -104,12 +104,14 @@ def run_PyBank():
     print_bank_results_to_text_file(months_total, profits_sum,average_change, greatest_increase_date, greatest_increase_amount, greatest_decrease_date, greatest_decrease_amount, output_file_path)
 
     # Print the results in terminal for testing
-    #print(f'Total Months: {months_total}')
-    #print(f'Total: ${profits_sum}')
-    #print(f'Changes in Profit/Losses over the entire period: {changes}')
-    #print(f'Average Change: ${average_change}')
-    #print(f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase_amount})')
-    #print(f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease_amount})')
+    print(f'Financial Analysis')
+    print('----------------------------')
+    print(f'Total Months: {months_total}')
+    print(f'Total: ${profits_sum}')
+    # print(f'Changes in Profit/Losses over the entire period: {changes}')
+    print(f'Average Change: ${average_change}')
+    print(f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase_amount})')
+    print(f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease_amount})')
 
 ####################################################################
 
@@ -173,6 +175,20 @@ def run_PyPoll():
     # print(f"Total Votes: {total_votes}")
     # print(f'{candidate_votes}')
     # print(f'{percentages}')
+    winner = max(percentages, key=percentages.get)
+    # Print the results in terminal for testing
+    print(f'Election Results')
+    print('----------------------------')
+    print(f'Total Votes:: {total_votes}')
+    for candidate_name, votes in percentages.items():
+        print(f'{candidate_name}: {votes}% ({candidate_votes[candidate_name]})')
+
+
+    print('----------------------------')
+    print(f'Winner: {winner}')
+    print('----------------------------')
+    
+    
 
 
 
@@ -181,6 +197,9 @@ def run_PyPoll():
 
 # Python script to analyse the financial records
 run_PyBank()
+
+print('----------------------------')
+print('----------------------------')
 
 # Python script to analyse the financial records
 run_PyPoll()
